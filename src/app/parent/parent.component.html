@@ -1,0 +1,56 @@
+<div class="page-area mx-auto bg-light" style="width: 70%;">
+    <div class="text-center shadow-lg">
+        <h1 class="rounded bg-light shadow-lg" style="font-size: 2.1vw; font-family:serif;" >Buy Products</h1>
+    </div>
+    <div class="alert alert-light border rounded shadow-lg d-flex align-items-center" *ngIf="addedProduct">
+        <strong class="text-success shadow-lg" style="font-size: 1.5vw;font-family: sans-serif;" >{{addedProduct}}</strong>&nbsp;&nbsp;<span style="font-size: 1.2vw;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">is Selected And Added In Cart.</span>
+        <button class="btn btn-success ml-auto rounded">Checkout</button>
+    </div>
+<hr class="mb-3 shadow-lg">
+<div class="row mx-auto shadow-lg  rounded text-center">
+    
+        <div class="card col-md-3">
+        <img src="../../assets/images/laptop.jpg" alt="" class="card-img-top">
+        <div class="card-body">
+            <h3 class="card-title">Laptop</h3>
+            
+            <button class="btn btn-success" (click)="onSelectProduct('Laptop')">Select Product</button>
+        </div>
+        </div>
+        <div class="card col-md-3">
+            <img src="../../assets/images/mobile.jpg" alt="" class="card-img-top">
+            <div class="card-body">
+                <h3 class="card-title">Mobile</h3>
+           
+                <button class="btn btn-success" (click)="onSelectProduct('Mobile')">Select Product</button>
+            </div>
+            </div>
+            <div class="card col-md-3">
+                <img src="../../assets/images/television.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h3 class="card-title">Television</h3>
+                   
+                    <button class="btn btn-success" (click)="onSelectProduct('Television')">Select Product</button>
+                </div>
+                </div>
+                <div class="card col-md-3">
+                    <img src="../../assets/images/washingmachine.jpg" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">Washing Machine</h3>
+                       
+                        <button class="btn btn-success" (click)="onSelectProduct('Washing Machine')">Select Product</button>
+                    </div>
+                    </div>
+                    
+                  
+<div class="col-md-12 bg-success text-white text-center py-4 shadow-lg rounded">
+    <h2 *ngIf="!productSelected">Please Select Any Product</h2>
+    <h2 *ngIf="productSelected"><span class="bg-dark rounded shadow-lg">{{selectedProduct}}</span> is Selected</h2>
+    <br>
+    <button class="btn btn-light shadow-lg" (click)="onAddProduct()">Add To Cart</button>
+</div>
+
+    </div>
+    </div>
+<br>
+<br>

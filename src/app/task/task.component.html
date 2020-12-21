@@ -1,0 +1,183 @@
+<br>
+<br>
+<input style="margin-left:743px;" class="btn btn-outline-dark  shadow-lg p-2 mb-5  rounded" value="jsonflow"
+  type="button" (click)="jsonflow()" />
+<div class="container">
+  <table class="table text-white  col-8 shadow-lg p-3 mb-5 badge-dark rounded">
+    <tr class="shadow-lg p-3 mb-5 badge-dark rounded"
+      style="background-image: linear-gradient(90deg,#b77bfb,#2a0071 30%);">
+      <th>PostID</th>
+      <th>Id</th>
+      <th>Email</th>
+      <th>Body</th>
+      <th class="shadow-lg p-3 mb-5 badge-dark rounded"
+        style="background:linear-gradient(90deg, #a1753b 0%, #F15B2A 100%);">Action</th>
+
+    </tr>
+    <tr *ngFor="let nm of flow">
+      <td>{{nm.postId}}</td>
+      <td>{{nm.id}}</td>
+      <td>{{nm.email}}</td>
+      <td>{{nm.body}}</td>
+    </tr>
+  </table>
+
+</div>
+---------------------------------------------------------------------------------------------
+<br />
+<br>
+<input type="text" value="myinputtext" (click)="onInputClick($event)">
+<br>
+<br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp; <button class="btn btn-outline-info" value="Laptop" (click)="onAddCart($event)">Laptop</button>
+&nbsp;&nbsp;&nbsp;
+<button class="btn btn-outline-dark" value="AC" (click)="onAddCart($event)">AC</button>&nbsp;&nbsp;&nbsp;
+<button class="btn btn-outline-warning" value="TV" (click)="onAddCart($event)">TV</button>
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>{{msg}}</b>
+<br>
+-------------------------------------------------------------------------------------------------------------------------------------------
+<br>
+<br>
+<input #inputinfo type="text" value="angular" name="shawal">
+<button class="btn btn-danger" (click)="getinputinfo(inputinfo)">Get Info</button>
+<br>
+<br>
+---------------------------------------------------------------------------------------------
+<br>
+<!-- Two way data biding -->
+<input type="text" value="Angular" [(ngModel)]="uname">
+<b>{{uname}}</b>
+<br>
+<br>
+-------------------------------------------------------------------------------------------------------------------------------------------
+<br>
+<div class="row">
+  <div class="col-xs-12 col-12 col-md-4 form-group">
+    <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker>
+  </div>
+  <div class="col-xs-12 col-12 col-md-4 form-group">
+    <input type="text" placeholder="Daterangepicker" class="form-control" bsDaterangepicker>
+  </div>
+</div>
+<br>
+<br><br><br><br>
+<div class="row mx-auto">
+  <div class="col-lg-12">
+    <div class="col-md-4">
+      <carousel>
+
+        <slide>
+          <img src="assets/images/1.jpg" alt="first slide" style="display: block; width: 100%;">
+        </slide>
+        <slide>
+          <img src="assets/images/2.jpg" alt="second slide" style="display: block; width: 100%;">
+        </slide>
+        <slide>
+          <img src="assets/images/3.jpg" alt="third slide" style="display: block; width: 100%;">
+        </slide>
+      </carousel>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<div class="container">
+  <button class="btn btn-dark" (click)="oncreatblock()">Creat Block</button>
+  <br><br>
+  <div *ngIf="isvalid; then thenblock else elseblock"></div>
+  <ng-template #thenblock>
+    <div class="row">
+      <div style="height: 50px;" class="col-4  bg-info text-white">Block Has Been created </div>
+    </div>
+  </ng-template>
+
+  <ng-template #elseblock>
+    <div>No Block Has been created Yet </div>
+  </ng-template>
+
+  <br>
+  <br>
+  <br>
+
+  <button class="btn btn-info badge-danger" (click)=toggleDisplayDiv()>Toggle display Div</button>
+  <div class="text-warning col-md-2" [hidden]="isShowDiv">This Is A Hidden Div.</div>
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <div class="col-md-4">
+      <select class="form-control" (change)="getProductVal($event)">
+
+        <option class="badge-danger" value="default">Select Product</option>
+        <option value="Laptop">Laptop</option>
+        <option value="TV">TV</option>
+        <option value="Mobile">Mobile</option>
+        <option value="Ac">AC</option>
+      </select>
+    </div>
+  </div>
+
+  <br>
+  <div class="container">
+    <div class="col-md-4" [ngSwitch]="selectedProduct">
+      <h1 class="text-danger" *ngSwitchDefault> <span class="text-danger">*</span>Please Select Product</h1>
+      <h2 class="text-warning" *ngSwitchCase="'Laptop'">Laptop</h2>
+      <h2 class="text-primary" *ngSwitchCase="'TV'">TV</h2>
+      <h2 class="text-success" *ngSwitchCase="'Mobile'">Mobile</h2>
+      <h2 class="text-info" *ngSwitchCase="'Ac'">AC</h2>
+    </div>
+  </div>
+  <br><br><br>
+  <br>
+  <br>
+  <br>
+  -----------------------------------------------------------------------------------------------------------------------------------------------
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <input type="text" class="form-control shadow-lg p-2 mb-5" #uuname placeholder="User Name">
+        <input type="number" class="form-control shadow-lg p-2 mb-5" #uuname2 placeholder="ID">
+        <input type="email" required class="form-control shadow-lg p-2 mb-5" #uuname3 placeholder="Email">
+
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-warning badge-success btn-outline-info"
+          (click)="onCreateUser(uuname,uuname2,uuname3)">Creat User</button>
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-danger" (click)="onRemoveUser()">Remove User</button>
+      </div>
+
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-10">
+        <table class="table" style="font-size: 1.1vw;font-family: Arial, Helvetica, sans-serif;">
+          <thead class="thead-dark">
+            <tr>
+              <th>User Name</th>
+              <th>ID</th>
+              <th>Email</th>
+              <th class="bg-danger">Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users; index as i">
+              <td class="text-dark  shadow-lg p-2 mb-5 border ">
+                {{user.name}}
+              </td>
+              <td class="text-dark   shadow-lg p-2 mb-5 border">{{user.email}}</td>
+              <td class="text-dark  shadow-lg p-2 mb-5 border">{{user.id}}</td>
+
+              <td class="bg-dark shadow-lg p-2 mb-5"><button
+                  class="float-right btn badge-danger btn-light shadow-lg p-1 mb-2 " (click)="RemoveUser(i)">Remove
+                  User</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br>
